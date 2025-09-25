@@ -1,26 +1,84 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 220 26% 14%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 26% 14%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 26% 14%;
+  --primary: 220 47% 17%;
+  --primary-foreground: 0 0% 98%;
+  --primary-glow: 220 47% 25%;
+  --secondary: 45 84% 47%;
+  --secondary-foreground: 220 26% 14%;
+  --secondary-light: 45 84% 65%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 200 50% 88%;
+  --accent-foreground: 220 26% 14%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 220 47% 17%;
+
+  --church-navy: 220 47% 17%;
+  --church-gold: 45 84% 47%;
+  --church-light-blue: 200 50% 88%;
+  --church-cream: 45 33% 96%;
+  --church-sage: 120 25% 85%;
+
+  --radius: 0.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  /* Custom Church Colors */
+  --color-church-navy: hsl(var(--church-navy));
+  --color-church-gold: hsl(var(--church-gold));
+  --color-church-light-blue: hsl(var(--church-light-blue));
+  --color-church-cream: hsl(var(--church-cream));
+  --color-church-sage: hsl(var(--church-sage));
+  
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* Border Radius */
+  --radius: var(--radius);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(var(--church-navy)), hsl(var(--primary-glow)));
 }
