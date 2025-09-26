@@ -40,7 +40,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-5">
               <Link
-                href="#"
+                href="https://www.facebook.com/share/p/19reDkqkDD/"
                 className="text-gray-400 hover:text-church-gold transition-colors duration-300 transform hover:scale-110"
                 aria-label="Facebook"
               >
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://www.youtube.com/channel/UCEvzPAzeJ_9BC74Ufrdz0Eg"
                 className="text-gray-400 hover:text-church-gold transition-colors duration-300 transform hover:scale-110"
                 aria-label="YouTube"
               >
@@ -124,11 +124,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-church-gold flex-shrink-0" />
-                <span>+254 700 000 000</span>
+                <span>+254715931011</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-church-gold flex-shrink-0" />
-                <span>info@stphilipskihingo.com</span>
+                <span>kihingoackstphilips@gmail.com</span>
               </div>
             </div>
           </div>

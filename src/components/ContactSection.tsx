@@ -28,26 +28,26 @@ const ContactSection = () => {
       title: "WhatsApp",
       description: "Chat with us instantly on WhatsApp.",
       icon: MessageCircle,
-      link: "https://wa.me/254796219542?text=Hello%20ACK%20St.%20Philip's%20Kihingo,%20I'd%20like%20to%20make%20an%20inquiry.",
+      link: "https://wa.me/254715931011?text=Hello%20ACK%20St.%20Philip's%20Kihingo,%20I'd%20like%20to%20make%20an%20inquiry.",
     },
     {
       title: "Email",
       description: "Send us an email and we'll respond promptly.",
       icon: Mail,
-      link: "mailto:info@kiambuack.org",
+      link: "kihingoackstphilips@gmail.com",
     },
     {
       title: "Direct Inquiries",
       description: "Call our office during working hours.",
       icon: Phone,
-      link: "tel:+254700000000",
+      link: "tel:+254715931011",
     },
   ];
 
   const socialLinks = [
     {
       icon: Facebook,
-      href: "#",
+      href: "https://www.facebook.com/share/p/19reDkqkDD/",
       label: "Facebook"
     },
     {
@@ -57,7 +57,7 @@ const ContactSection = () => {
     },
     {
       icon: Youtube,
-      href: "#",
+      href: "https://www.youtube.com/@ACKSTPHILIPSKIHINGO",
       label: "YouTube"
     }
   ];

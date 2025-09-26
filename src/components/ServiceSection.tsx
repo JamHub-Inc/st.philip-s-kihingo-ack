@@ -434,7 +434,7 @@ const ServicesAndLiveStreamSection = () => {
                 variant="outline"
                 className="border-2 border-white text-church-navy hover:bg-white hover:text-church-navy font-semibold px-8 py-3 rounded-lg transition-all"
               >
-                <Link href="https://www.youtube.com/@franko_scar" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.youtube.com/@ACKSTPHILIPSKIHINGO" target="_blank" rel="noopener noreferrer">
                   Subscribe on YouTube
                 </Link>
               </Button>
