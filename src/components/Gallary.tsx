@@ -395,7 +395,7 @@ export default function Gallery({
                             transition={{ delay: 0.3, duration: 0.3 }}
                           >
                             <Link 
-                              href={`/${post.slug?.current || '#'}`}
+                              href={`#`}
                               className="p-3 bg-church-gold text-church-navy rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110 font-semibold"
                             >
                               <svg

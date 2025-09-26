@@ -3,8 +3,6 @@ import HeroSection from '@/components/HeroSection';
 import WelcomeSection from '@/components/WelcomeSection';
 import ServiceSection from '@/components/ServiceSection';
 import Gallery from '@/components/Gallary';
-import LiveStreamSection from '@/components/LiveStreamSection';
-import DepartmentsSection from '@/components/DepartmentsSection';
 import VicarSection from '@/components/VicarSection';
 import ContactSection from '@/components/ContactSection';
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -19,8 +17,6 @@ export default function Home() {
       <WelcomeSection />
       <ServiceSection />
       <Gallery/>
-      {/* <LiveStreamSection /> */}
-      {/* <DepartmentsSection /> */}
       <VicarSection />
       <ContactSection />
       <Footer />

@@ -25,7 +25,11 @@ const WelcomeSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 80, damping: 20 },
+      transition: { 
+        type: "spring" as const, 
+        stiffness: 80, 
+        damping: 20 
+      },
     },
   };
 
@@ -51,7 +55,8 @@ const WelcomeSection = () => {
       description: "Christ is the center of all we do — our foundation and hope.",
     },
   ];
-    const handleNavClick = (href: string) => {
+
+  const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -106,8 +111,8 @@ const WelcomeSection = () => {
 
               {/* Quote */}
               <blockquote className="border-l-4 border-church-gold pl-4 italic text-gray-600 mb-6 font-light">
-                “To know Christ and make Him known through worship, fellowship,
-                discipleship, and service to our community and the world.”
+                "To know Christ and make Him known through worship, fellowship,
+                discipleship, and service to our community and the world."
               </blockquote>
 
               {/* CTA */}
@@ -177,7 +182,7 @@ const WelcomeSection = () => {
                 <p className="text-lg opacity-90 max-w-2xl mx-auto leading-relaxed font-light">
                   "To be a thriving, Christ-centered community that transforms
                   lives and makes disciples who impact Kiambu and beyond for
-                  God&apos;s glory."
+                  God's glory."
                 </p>
               </div>
             </div>
@@ -191,7 +196,7 @@ const WelcomeSection = () => {
                 <div className="flex flex-col items-start text-left">
                   <DollarSign className="w-10 h-10 mb-4 text-church-gold" />
                   <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-                    Support God&apos;s Work
+                    Support God's Work
                   </h3>
                   <p className="text-lg opacity-90 mb-6 font-light">
                     Give your <span className="font-semibold">offering, tithe</span>, or{" "}

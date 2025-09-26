@@ -95,16 +95,27 @@ const ServicesAndLiveStreamSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 80, damping: 20 },
+      transition: { 
+        type: "spring" as const,
+        stiffness: 80, 
+        damping: 20 
+      },
     },
   };
 
+  // Fixed cardVariants with proper typing
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { 
+      opacity: 0, 
+      y: 20 
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+      transition: { 
+        duration: 0.6,
+        ease: "easeOut" as const // Use string literal with const assertion
+      },
     },
   };
 
@@ -138,7 +149,8 @@ const ServicesAndLiveStreamSection = () => {
         "Empowering teenagers to live out their faith with joy, purpose, and resilience.",
     },
   ];
-    const handleNavClick = (href: string) => {
+
+  const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -266,12 +278,12 @@ const ServicesAndLiveStreamSection = () => {
 
               {/* Service Times & Prayer - Updated to take full height */}
               <div className="flex flex-col space-y-6 h-full">
-               {/* Scripture of the day */}
-<Card className="bg-gradient-to-r from-church-navy to-blue-900 text-white rounded-xl flex-1 flex flex-col">
-  <CardContent className="p-6 flex flex-col flex-1 justify-center">
-    <ScriptureOfTheDay />
-  </CardContent>
-</Card>
+                {/* Scripture of the day */}
+                <Card className="bg-gradient-to-r from-church-navy to-blue-900 text-white rounded-xl flex-1 flex flex-col">
+                  <CardContent className="p-6 flex flex-col flex-1 justify-center">
+                    <ScriptureOfTheDay />
+                  </CardContent>
+                </Card>
                 
                 {/* Second Prayer Card */}
                 <Card className="bg-gradient-to-r from-church-navy to-blue-900 text-white rounded-xl flex-1 flex flex-col">
@@ -359,10 +371,10 @@ const ServicesAndLiveStreamSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-               onClick={() => handleNavClick('#contact')}
-              className="bg-church-gold hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all"
+                onClick={() => handleNavClick('#contact')}
+                className="bg-church-gold hover:bg-yellow-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all"
               >
-                  Get Directions
+                Get Directions
               </Button>
               <Button
                 asChild

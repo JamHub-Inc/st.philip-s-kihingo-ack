@@ -147,37 +147,32 @@ const DepartmentsSection = () => {
     ? departments 
     : departments.filter(dept => dept.category === activeFilter);
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.2, 
-        delayChildren: 0.3,
-        duration: 0.8
-      },
+  // Animation variants - CORRECTED
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { 
+      staggerChildren: 0.2, 
+      delayChildren: 0.1 
     },
-  };
+  },
+};
 
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 60,
-      scale: 0.95
+const itemVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 30 
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { 
+      duration: 0.6
+      // Remove the ease property or use a valid easing function
     },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { 
-        duration: 0.8, 
-        ease: [0.25, 0.46, 0.45, 0.94],
-        type: "spring",
-        stiffness: 100
-      },
-    },
-  };
+  },
+};
 
   // Loading state
   if (loading) {
