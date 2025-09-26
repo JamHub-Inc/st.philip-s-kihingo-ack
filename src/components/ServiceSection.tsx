@@ -25,13 +25,16 @@ const ServicesAndLiveStreamSection = () => {
       const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
       const channelId = "UCegro5FeF66wVl4LWsMBHMA"; 
 
+      // Enhanced API key check
       if (!apiKey) {
-        const errorMsg = "YouTube API key is not configured.";
+        const errorMsg = "YouTube API key is not configured. Please check your environment variables.";
         console.error(errorMsg);
         setError(errorMsg);
         setLoading(false);
         return;
       }
+
+      console.log('API Key detected, fetching streams...');
 
       // Try to fetch live streams first
       const liveResponse = await fetch(
@@ -39,25 +42,28 @@ const ServicesAndLiveStreamSection = () => {
       );
       
       if (!liveResponse.ok) {
-        throw new Error(`YouTube API error: ${liveResponse.status}`);
+        throw new Error(`YouTube API error: ${liveResponse.status} ${liveResponse.statusText}`);
       }
       
       const liveData = await liveResponse.json();
 
       if (liveData.items && liveData.items.length > 0) {
+        console.log('Live streams found:', liveData.items.length);
         setStreams(liveData.items);
       } else {
         // Fallback to latest videos if no live streams
+        console.log('No live streams, fetching latest videos...');
         const latestResponse = await fetch(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=3&order=date&type=video&key=${apiKey}`
         );
         
         if (!latestResponse.ok) {
-          throw new Error(`YouTube API error: ${latestResponse.status}`);
+          throw new Error(`YouTube API error: ${latestResponse.status} ${latestResponse.statusText}`);
         }
         
         const latestData = await latestResponse.json();
         setStreams(latestData.items || []);
+        console.log('Latest videos found:', latestData.items?.length || 0);
       }
 
       setLoading(false);
@@ -72,7 +78,7 @@ const ServicesAndLiveStreamSection = () => {
     fetchStreams();
   }, []);
 
-  // Countdown to next Sunday 8:30 AM - Always runs regardless of stream status
+  // Countdown to next Sunday 8:30 AM
   useEffect(() => {
     const updateCountdown = () => {
       const now = new Date();
@@ -279,7 +285,6 @@ const ServicesAndLiveStreamSection = () => {
                     </CardContent>
                   </Card>
                 ) : (
-                  // Updated countdown section to match your mini component style
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -291,26 +296,27 @@ const ServicesAndLiveStreamSection = () => {
                     </div>
 
                     <h3 className="text-xl font-serif font-bold mb-3">
-                      No Live Stream Right Now
+                      No Live Stream at the Moment
                     </h3>
                     <p className="text-white/80 mb-4 font-light">
-                      Next Service: <span className="font-semibold">Sunday 8:30 AM</span>
+                      Join us for our next service on Sunday at{" "}
+                      <span className="font-semibold">8:30 AM</span>
                     </p>
 
-                    <div className="flex items-center justify-center space-x-2 mb-4">
+                    <div className="flex items-center justify-center space-x-3 mb-4">
                       {countdown.split(" ").map((part, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ rotateX: -90, opacity: 0 }}
                           animate={{ rotateX: 0, opacity: 1 }}
                           transition={{ duration: 0.6, delay: idx * 0.2 }}
-                          className="bg-black/40 px-3 py-2 rounded-lg text-center min-w-[60px]"
+                          className="bg-black/40 px-3 py-2 rounded-lg text-center"
                         >
                           <span className="block text-lg font-bold text-church-gold">
                             {part}
                           </span>
-                          <span className="block text-xs uppercase tracking-wide text-white/70 mt-1">
-                            {idx === 0 ? 'days' : idx === 1 ? 'hours' : 'mins'}
+                          <span className="block text-xs uppercase tracking-wide text-white/70">
+                            {idx === 0 ? "Days" : idx === 1 ? "Hours" : "Minutes"}
                           </span>
                         </motion.div>
                       ))}
@@ -360,6 +366,7 @@ const ServicesAndLiveStreamSection = () => {
             </div>
           </motion.div>
 
+          {/* Rest of your component remains the same */}
           {/* Service Schedule Section */}
           <motion.div variants={itemVariants}>
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-church-navy text-center mb-12">
