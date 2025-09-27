@@ -23,7 +23,7 @@ const ServicesAndLiveStreamSection = () => {
       setError(null);
       
       const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-      const channelId = "UCegro5FeF66wVl4LWsMBHMA"; 
+      const channelId = "UCEvzPAzeJ_9BC74Ufrdz0Eg"; 
 
       // Enhanced API key check
       if (!apiKey) {
@@ -265,7 +265,7 @@ const ServicesAndLiveStreamSection = () => {
                       {streams[0]?.snippet?.liveBroadcastContent === "live" && (
                         <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm flex items-center">
                           <Users className="w-4 h-4 mr-1" />
-                          145 watching
+                          Watching
                         </div>
                       )}
                     </div>
@@ -353,7 +353,7 @@ const ServicesAndLiveStreamSection = () => {
                       className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-church-navy transition-colors mt-auto"
                     >
                       <Link
-                        href="https://wa.me/254796219542?text=Hello%20ACK%20St.%20Philip%27s%20Kihingo,%20I%20would%20like%20to%20submit%20a%20prayer%20request."
+                        href="https://wa.me/254715931011?text=Hello%20ACK%20St.%20Philip's%20Kihingo,%20I'd%20like%20to%20make%20an%20inquiry."
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -365,8 +365,6 @@ const ServicesAndLiveStreamSection = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Rest of your component remains the same */}
           {/* Service Schedule Section */}
           <motion.div variants={itemVariants}>
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-church-navy text-center mb-12">
