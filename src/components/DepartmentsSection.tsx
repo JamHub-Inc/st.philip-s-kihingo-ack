@@ -9,7 +9,6 @@ import { client } from "@/app/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
-// Types for better type safety
 interface SanityImage {
   _type: 'image';
   asset: {
@@ -101,13 +100,12 @@ const DepartmentsSection = () => {
         if (!departmentsData || !Array.isArray(departmentsData)) {
           throw new Error('Invalid data format received from server');
         }
-        
-        // Process departments data
+       
         const processedDepartments = departmentsData.map((dept: Department) => ({
           ...dept,
           excerpt: dept.excerpt || getExcerpt(dept.body, 120),
           category: dept.category || 'Ministry'
-        })).filter(dept => dept.title); // Filter out departments without titles
+        })).filter(dept => dept.title);
         
         console.log('Processed departments:', processedDepartments);
         setDepartments(processedDepartments);

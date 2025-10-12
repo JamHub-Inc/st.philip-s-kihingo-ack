@@ -13,9 +13,10 @@ const Header = () => {
     { label: "Home", href: "#home" },
     { label: "About Us", href: "#about" },
     { label: "Services", href: "#services" },
+    { label: "Departments", href: "#gallary" },
     { label: "Leadership", href: "#vicars" },
     { label: "Contact", href: "#contact" },
-    { label: "Gallery", href: "#gallary" }
+    { label: "Gallery", href: "#churchgallary",}
   ];
 
   const handleNavClick = (href: string) => {

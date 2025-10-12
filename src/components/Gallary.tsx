@@ -70,7 +70,7 @@ interface GalleryProps {
 }
 
 export default function Gallery({
-  title = "Church Department Gallery",
+  title = "Church Departments",
   subtitle = "MINISTRIES & ACTIVITIES",
   description = "Explore the vibrant ministries and activities of our church departments through our visual journey of faith in action.",
   maxItems = 12,

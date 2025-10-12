@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Users, Baby, Play, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import ScriptureOfTheDay from "@/components/ScriptureOfTheDay";
+import NoticesSection from "@/components/NoticeSection";
 
 const ServicesAndLiveStreamSection = () => {
   const ref = useRef(null);
@@ -365,6 +366,15 @@ const ServicesAndLiveStreamSection = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Notices Section - Added Here */}
+          <motion.div 
+            variants={itemVariants}
+            className="mb-20"
+          >
+            <NoticesSection />
+          </motion.div>
+
           {/* Service Schedule Section */}
           <motion.div variants={itemVariants}>
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-church-navy text-center mb-12">
