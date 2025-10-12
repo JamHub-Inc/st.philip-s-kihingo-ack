@@ -118,9 +118,9 @@ const ChurchGallery = () => {
 
   if (loading) {
     return (
-      <section id="churchgallary" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section id="churchgallary" className="py-10 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
